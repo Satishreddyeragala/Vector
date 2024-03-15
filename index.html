@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin:0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        body
+        {
+            position: relative;
+        }
+        nav{
+            background-color: rgb(35, 34, 34);
+            height:40px;
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mnav{
+            width:32%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .mlinks{
+            width:45%;
+            display:flex;
+            margin-right:50px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .mlinks a{
+            text-decoration: none;
+            color: rgb(226, 237, 237);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;  
+        }
+        .nav{
+            width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 15vh;
+            background-color: #fbfbfb;
+            position: sticky;
+            top:0px;
+            z-index: 1;
+        }
+        .logo{
+            padding-left: 80px;
+            width: 250px;
+            height: 50px;
+        }
+        .links{
+            padding-right: 50px;
+            width:60%;
+            display:flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .links a{
+            text-decoration: none;
+            color: cadetblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .con2{
+            width:100%;
+            height:85vh;
+            position: relative;
+            background-image: url("mern.jpg");
+            background-size: 100% 100%;
+        }
+        .con3{
+            height: 180px;
+            position:absolute;
+            top:28%;
+            left:31%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .con3 h1{
+            color: chocolate;
+            font-size: 40px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .con3 p{
+            margin-top: 20px;
+            color: aquamarine;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #b1{
+            margin-top: 20px;
+            color: cornsilk;
+            background-color: transparent;
+            width:110px;
+            height:40px;
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            border: 1px solid whitesmoke;
+        }
+        .con4{
+            border: 1px solid rgb(228, 228, 221);
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: auto;
+            align-items: center;
+            gap:10px;
+            padding:10px;
+            border-radius: 25px;
+            background-color: bisque;
+        }
+        .con4 .pimg>img{
+            width: 53px;
+            height: 53px;
+            border-radius: 25px;
+            border: 4px solid goldenrod;
+            position: relative;
+        }
+        .con4 p{
+            text-align: center;
+            color: coral;
+            font-size: 15px;
+        }
+        .fa-solid{
+            color: gold;
+        }
+        .con5{
+            border: 1px solid rgb(228, 228, 221);
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: auto;
+            align-items: center;
+            gap:10px;
+            padding:10px;
+            border-radius: 25px;
+            background-color: bisque;
+        }
+        .con5 .pimg>img{
+            width: 53px;
+            height: 53px;
+            border-radius: 25px;
+            border: 4px solid goldenrod;
+            position: relative;
+        }
+        .con5 p{
+            text-align: center;
+            color: coral;
+            font-size: 15px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .coursetitle{
+            padding-top: 23px;
+            padding-bottom: 23px;
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: crimson;
+        }
+        footer{
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 30px;
+            width:100%;
+            height:60vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-image: url("footer.jpg");
+            background-size: 100% 100%;
+        }
+        .hyd,.bang,.chen,.about{
+            margin-top: 30px;
+            width:20%;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .one,.two,.three,.four{
+            display: flex;
+            height:40vh;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+        .one p,.two p,.three p{
+            padding-bottom: 8px;
+            color: antiquewhite;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #h3{
+            text-align: left;
+            padding-bottom: 10px;
+            border-bottom: 2px solid green;
+            color: aqua;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .fa-solid{
+            color: #eb7a24;
+        }
+        .ab,.bc{
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        a:hover{
+            color: blue;
+        }
+        .bc p{
+            display: flex;
+            padding-left: 10px;
+            font-size: 13px;
+        }
+        .bc a{
+            text-decoration: none;
+            color: #fbfbfb
+        }
+        .ab p{
+            display: flex;
+            justify-content: space-evenly;
+            padding-left: 10px;
+            padding-top: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .ab a{
+            text-decoration: none;
+            color: #fbfbfb;
+        }
+        .ab a:hover,.bc a:hover{
+            color: blue;
+        }
+        .four a{
+            text-decoration: none;
+            color: #fbfbfb;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding-bottom: 10px;
+            position: relative;
+            transition: transform .5s;
+        }
+
+        .four a:hover
+        {
+            transform: translateX(20px);
+        }
+        .four a:nth-child(1)
+        {
+            padding-top: 20px;
+        }
+
+        .four a::before
+        {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 3px;
+            border-radius: 1.5px;
+            background-color: orangered;
+            top:8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s;
+        }
+        .four a:nth-child(1):before
+        {
+            top: 28px;
+        }
+        .four a:hover::before{
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-20px);
+        }
+        #esr {
+	       text-align: center;
+           font-size: 20px;
+           font-weight: 500;
+           color: #202122;
+           font-family: Verdana, Geneva, Tahoma, sans-serif; 
+           padding-bottom: 10px;
+        }
+        .model-box {
+	       padding: 12px 24px 24px 24px;
+	       margin: 48px 12px;
+           width:25%;
+	       background: #7d878e;
+	       border-radius: 4px;
+        }
+        input[type=text],input[type=email], textarea,select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+        input[type=submit] {
+	        background-color: #eb7a24;
+	        color: white;
+	        border: 0;
+	        padding: 12px 24px;
+	        border-radius: 4px;
+	        position: relative;
+            left:30%;
+	        display: inline-block;
+	        text-align: center;
+        }
+        input[type=submit]:hover {
+	        background: #2196F3;
+            cursor: pointer;
+        }
+        select,option{
+            color: rgb(41, 40, 40);
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color:rgba(26, 24, 24, 0.58) ;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s;
+        }
+        .change.wrapper{
+            opacity: 1;
+            visibility: visible ;
+        }
+        .fa-xmark{
+            font-size: 20px;
+            position: relative;
+            left:95%;
+            color: rgb(223, 176, 115);
+            cursor: pointer;
+        }
+        .cours{
+            width:100%;
+            height:100vh;
+            position: relative;
+            margin-top: 5px;
+           
+        }
+        .cours img{
+            width:100%;
+            height:100%;
+            background-size: 100% 100%;
+            opacity: 1.5;
+         
+        }
+        .dotcon{
+            width:100%;
+            text-align: center;
+            letter-spacing: 4px;
+            font-size: 25px;
+            position: absolute;
+            background-color: #505253;
+        }
+        .fa-less-than{
+            position: absolute;
+            left:10px;
+            top:48%;
+            font-size: 30px;
+        }
+        .fa-greater-than{
+            position: absolute;
+            right:10px;
+            top:48%;
+            background-color: transparent;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="mnav">
+            <div class="bc">
+                <i class="fa-solid fa-envelope fa-xs"></i>
+                <p><a href="mailto:info.vectorindia.org">info@vectorindia.org</a></p>
+            </div>
+            <div class="bc">
+                <i class="fa-solid fa-phone fa-xs"></i>
+                <p><a href="tel:+91 9866666699">+91 9866666699</a></p>
+            </div>
+        </div>
+        <div class="mlinks">
+            <a href="addmission.html">Addmission</a>
+            <a href="vlogin.html">Student login</a>
+            <a href="applyonline.html">Apply Online</a>
+            <a href="enquiry.html" class="quick_enquiry_btn">Quick Enquiry</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+    <div class="nav">
+     <a href="index.html"><img src="vector.png" class="logo"></a>
+        <div class="links">
+            <a href="institute.html">Institute</a>
+            <a href="#">Embedded Systems</a>
+            <a href="full_stack.html">Full Stack Development</a>
+            <a href="#">Workshops</a>
+            <a href="#">Placements</a>
+        </div>
+    </div>
+    <div class="con2">
+       <div class="con3">
+            <h1>India's No 1 training Institute</h1>
+            <p>To become a full-stack developer now you can join with us.</p>
+            <a href="#" id="b1">Click me join</a>
+       </div>
+    </div>
+    <div class="coursetitle">
+        <h1>
+            Testimonals
+        </h1>
+    </div>
+    <div class="container">
+        <div class="con4">
+            <div class="pimg">
+                <img src="t1.jpg">
+            </div>
+            <p>Hi, I am Gokul My batch id is V21CE9G3. I came to know about vector India from my friends who got an amazing opportunity to get placed in well reputed companies, it was a 6-month course here I learn C,C++,Embedded C modules which are applied in Industries. Here I have learnt know how to face company interviews and communications skills also. I got Selected in Vitesco technologies Package with 6 LPA.</p>
+            <div class="rt">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+        <div class="con5">
+            <div class="pimg">
+                <img src="t1.jpg">
+            </div>
+            <p>Hi, I am Gokul My batch id is V21CE9G3. I came to know about vector India from my friends who got an amazing opportunity to get placed in well reputed companies, it was a 6-month course here I learn C,C++,Embedded C modules which are applied in Industries. Here I have learnt know how to face company interviews and communications skills also. I got Selected in Vitesco technologies Package with 6 LPA.</p>
+            <div class="rt">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+        </div>
+        
+    </div>
+    <div class="cours">
+        <img src="c1.jpg">
+        <i class="fa-solid fa-less-than" onclick="bkw()"></i>
+        <i class="fa-solid fa-greater-than"onclick="fwd()"></i>
+        <div class="dotcon">
+            <i class="fa-solid fa-circle" onclick="seti(0)"></i>
+            <i class="fa-regular fa-circle" onclick="seti(1)"></i>
+            <i class="fa-regular fa-circle" onclick="seti(2)"></i>
+            <i class="fa-regular fa-circle" onclick="seti(3)"></i>
+            <i class="fa-regular fa-circle" onclick="seti(4)"></i>
+            <i class="fa-regular fa-circle" onclick="seti(5)"></i>
+        </div>
+    </div>
+    <footer>
+        <div class="hyd">
+            <h3 id="h3">Hyderabad</h3>
+            <div class="one">
+                <p>#502, Nagasuri Plaza, Behind Maithrivanam, Ameerpet, Hyderabad - 500038.</p>
+                <div class="ab">
+                    <i class="fa-solid fa-phone fa-xs"></i>
+                    <p><a href="tel:+91 98666 66699">+91 98666 66699</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-headset fa-xs"></i>
+                    <p><a href="tel:040 23 73 6669">040 23 73 6669</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-envelope fa-xs"></i>
+                    <p><a href="mailto:info.vectorindia.org">info@vectorindia.org</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="bang">
+            <h3 id="h3">Bangalore </h3>
+            <div class="two">
+                <p>33/49, 27th Cross, 12th Main, Jayanagar 4th block, Bangalore - 560011.</p>
+                <div class="ab">
+                    <i class="fa-solid fa-phone fa-xs"></i>
+                    <p><a href="tel:+91 87624 56789">+91 87624 56789</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-headset fa-xs"></i>
+                    <p><a href="tel:080 26546474">080 26546474</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-envelope fa-xs"></i>
+                    <p><a href="mailto:info.blr@vectorindia.org">info.blr@vectorindia.org</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="chen">
+            <h3 id="h3">Chennai</h3>
+            <div class="three">
+                <p>2nd floor, 179, 1st Main Road, Nehru Nagar, Lane Opp to Turyaa Hotel, Perungudi, Chennai - 600096 </p>
+                <div class="ab">
+                    <i class="fa-solid fa-phone fa-xs"></i>
+                    <p><a href="tel:+91 94442 22459">+91 94442 22459</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-headset fa-xs"></i>
+                    <p><a href="tel:044 24543969">044 24543969</a></p>
+                </div>
+                <div class="ab">
+                    <i class="fa-solid fa-envelope fa-xs"></i>
+                    <p><a href="mailto:info.chen@vectorindia.org">info.chen@vectorindia.org</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <h3 id="h3">Company</h3>
+            <div class="four">
+                <a href="#">About Vector India</a>
+                <a href="#">Careers</a>
+                <a href="#">Testimonals</a>
+                <a href="#">Gallery</a>
+                <a href="#">FAQ's</a>
+                <a href="#">Policies</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Site Map</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="wrapper">
+        <div class="model-box">
+            <i class="fa-solid fa-xmark btn-close"></i>
+            <h3 id="esr">Request A Call Back</h3>
+            <form action="#" name="contact_form">
+                <input name="first_name" type="text" required placeholder="Full Name"/>
+                <br>
+                <input name="email" type="email" required placeholder="Email ID"/>
+                <br>
+                <input name="last_name" type="text" required placeholder="Mobile Number"/>
+                <br>
+                <select id="Course51" name="Course51">
+                    <option selected disabled hidden style="display: block;">Course Interested For</option>
+                    <option value="Embedded Systems Regular">Embedded Systems Regular</option>
+                    <option value="Embedded Systems Online">Embedded Systems Online</option>
+                    <option value="Full Stack Development">Full Stack Development</option>
+                    <option value="Automotive Embedded">Automotive Embedded</option>
+                    <option value="Micro Python">Micro Python</option>
+                    <option value="Python">Python</option>
+                    <option value="Autosar">Autosar</option>
+                    <option value="Device Drivers">Device Drivers</option>
+                    <option value="IOT and Beyond">IOT and Beyond</option>
+                    <option value="Embedded C">Embedded C</option>
+                </select><br>
+                <textarea rows="4" name="enquiry" placeholder="Enquiry"></textarea>
+                <div class="center">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>	
+        </div>
+    </div>
+    <script src="index.js"></script>
+    
+    
+   
+</body>
+</html>
